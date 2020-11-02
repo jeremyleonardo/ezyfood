@@ -14,25 +14,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void openCatalog(View view) {
-        String catalogType = "";
+    public void openView(View view) {
+        String viewType = "";
         switch (view.getId()) {
             case (R.id.button1):
-                catalogType = "drinks";
+                viewType = "drinks";
                 break;
             case (R.id.button2):
-                catalogType = "snacks";
+                viewType = "snacks";
                 break;
             case (R.id.button3):
-                catalogType = "foods";
+                viewType = "foods";
                 break;
             case (R.id.button4):
-                catalogType = "topup";
+                viewType = "topup";
                 break;
         }
-        Intent intent = new Intent(this, CatalogActivity.class);
-        intent.putExtra("catalogType", catalogType);
-        startActivity(intent);
+        if (viewType.equals("topup")){
+            Intent intent = new Intent(this, TopUpActivity.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, CatalogActivity.class);
+            intent.putExtra("catalogType", viewType);
+            startActivity(intent);
+        }
     }
 
     public void openCart(View view){

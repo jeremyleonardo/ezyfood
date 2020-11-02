@@ -38,12 +38,14 @@ public class OrderActivity extends AppCompatActivity {
 
     public void addToCart(View view){
         int qty = 0;
-        try {
-            qty = Integer.parseInt(etQuantity.getText().toString());
-        } catch (Exception e) {
-            Toast.makeText(this, "Quantity harus diisi", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        do {
+            try {
+                qty = Integer.parseInt(etQuantity.getText().toString());
+            } catch (Exception e) {
+                Toast.makeText(this, "Quantity harus diisi", Toast.LENGTH_LONG).show();
+                return;
+            }
+        } while(qty == 0);
         PreferenceHelper.addToCart(this, menu, qty);
         finish();
     }

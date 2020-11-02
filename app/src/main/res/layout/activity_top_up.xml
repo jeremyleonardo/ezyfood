@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".TopUpActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openCart"
+                android:text="My Order" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wallet Anda Sekarang :" />
+
+        <TextView
+            android:id="@+id/tvWallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp 0" />
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64px"
+            android:text="Nominal TopUp :" />
+
+        <EditText
+            android:id="@+id/etTopUpAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/topUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="topUp"
+            android:text="TopUp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

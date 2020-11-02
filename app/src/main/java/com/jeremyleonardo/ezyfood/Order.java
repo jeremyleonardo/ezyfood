@@ -21,4 +21,9 @@ public class Order extends Menu {
     public String toString() {
         return getName() + '-' + getPrice() + '-' + quantity;
     }
+
+    public Menu toMenu() {
+        return new Menu(getName(), getPrice());
+    }
+
 }
