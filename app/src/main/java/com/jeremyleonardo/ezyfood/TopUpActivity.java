@@ -2,6 +2,7 @@ package com.jeremyleonardo.ezyfood;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -39,5 +40,10 @@ public class TopUpActivity extends AppCompatActivity {
         Toast.makeText(this, "Berhasil TopUp", Toast.LENGTH_LONG).show();
         setWalletBalance();
 
+    }
+
+    public void openCart(View view){
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
     }
 }

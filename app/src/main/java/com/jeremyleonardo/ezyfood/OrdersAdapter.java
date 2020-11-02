@@ -2,9 +2,11 @@ package com.jeremyleonardo.ezyfood;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,12 +50,27 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
         TextView tvQuantity;
         TextView tvTitle;
         TextView tvPrice;
+        Button removeBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvPrice = itemView.findViewById(R.id.tvPrice);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
+            removeBtn = itemView.findViewById(R.id.removeBtn);
+
+            removeBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    Menu menu = orderList.get(position).toMenu();
+                    PreferenceHelper.removeFromCart(context, menu);
+                }
+            });
+        }
+
+        public void removeItem(View view){
+            Log.v("TEST","rmv");
         }
 
     }
