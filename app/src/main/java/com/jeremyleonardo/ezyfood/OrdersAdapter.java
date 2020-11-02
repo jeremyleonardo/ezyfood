@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder> {
 
@@ -57,22 +56,21 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvPrice = itemView.findViewById(R.id.tvPrice);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
-            removeBtn = itemView.findViewById(R.id.removeBtn);
 
-            removeBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int position = getAdapterPosition();
-                    Menu menu = orderList.get(position).toMenu();
-                    PreferenceHelper.removeFromCart(context, menu);
-                }
-            });
+            if(itemView.findViewById(R.id.removeBtn) != null){
+
+                removeBtn = itemView.findViewById(R.id.removeBtn);
+                removeBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int position = getAdapterPosition();
+                        Menu menu = orderList.get(position).toMenu();
+                        PreferenceHelper.removeFromCart(context, menu);
+                    }
+                });
+            }
+
         }
-
-        public void removeItem(View view){
-            Log.v("TEST","rmv");
-        }
-
     }
 }
 

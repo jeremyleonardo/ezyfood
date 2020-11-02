@@ -27,33 +27,54 @@
                 android:text="My Order" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button1"
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openView"
-            android:text="Drinks" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openView"
-            android:text="Snacks" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openView"
-            android:text="Foods" />
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:onClick="openView"
+                    android:text="Drinks" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openView"
-            android:text="TopUp" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:onClick="openView"
+                    android:text="Snacks" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:onClick="openView"
+                    android:text="Foods" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:onClick="openView"
+                    android:text="TopUp" />
+            </TableRow>
+
+        </TableLayout>
 
     </LinearLayout>
 

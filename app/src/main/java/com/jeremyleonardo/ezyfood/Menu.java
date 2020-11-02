@@ -12,6 +12,10 @@ public class Menu implements Serializable {
         this.price = price;
     }
 
+    public Menu(){
+
+    }
+
     public String getName() {
         return name;
     }

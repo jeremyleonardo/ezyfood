@@ -42,7 +42,7 @@ public class PreferenceHelper {
         }
     }
 
-    private static void emptyCart(Context context){
+    public static void emptyCart(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.remove("cart");
@@ -84,7 +84,15 @@ public class PreferenceHelper {
         SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putInt ("wallet", topUpAmount);
+        editor.putInt ("wallet",  getWalletBalance(context) + topUpAmount);
+        editor.apply();
+    }
+
+    public static void reduceBalance(Context context, int reduceAmount){
+        SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putInt ("wallet", (getWalletBalance(context) - reduceAmount));
         editor.apply();
     }
 

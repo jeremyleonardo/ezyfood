@@ -24,8 +24,8 @@
     <style name="ButtonColor" parent="@android:style/Widget.Button">
         <item name="backgroundTint">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:paddingStart">60px</item>
-        <item name="android:paddingEnd">60px</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
     </style>
 
 </resources>
