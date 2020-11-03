@@ -1,7 +1,7 @@
 package com.jeremyleonardo.ezyfood;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -18,7 +18,7 @@ public class CatalogActivity extends AppCompatActivity {
     private TextView tvCatalogType;
 
     List<Menu> menuList = new ArrayList<>();
-    MenusAdapter adapter;
+    CatalogAdapter adapter;
     RecyclerView rvMenus;
 
     @Override
@@ -52,9 +52,9 @@ public class CatalogActivity extends AppCompatActivity {
 
 
         rvMenus = findViewById(R.id.rvMenus);
-        rvMenus.setLayoutManager(new LinearLayoutManager(this));
+        rvMenus.setLayoutManager(new GridLayoutManager(this,2));
 
-        adapter = new MenusAdapter(this, (ArrayList<Menu>) menuList);
+        adapter = new CatalogAdapter(this, (ArrayList<Menu>) menuList);
         rvMenus.setAdapter(adapter);
 
     }

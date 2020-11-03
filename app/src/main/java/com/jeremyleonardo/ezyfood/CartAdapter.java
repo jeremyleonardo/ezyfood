@@ -1,8 +1,6 @@
 package com.jeremyleonardo.ezyfood;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder> {
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     Context context;
     ArrayList<Order> orderList;
 
-    public OrdersAdapter(Context context, ArrayList<Order> orderList) {
+    public CartAdapter(Context context, ArrayList<Order> orderList) {
         this.context = context;
         this.orderList = orderList;
     }

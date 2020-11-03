@@ -2,10 +2,8 @@ package com.jeremyleonardo.ezyfood;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class PreferenceHelper {
 
@@ -65,7 +63,6 @@ public class PreferenceHelper {
                 String[] attributes = menu.split("-");
                 orderList.add( new Order(attributes[0], Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2])) );
             }
-//        Log.v("TEST", orderList.toString());
         }
 
         return orderList;

@@ -2,7 +2,6 @@ package com.jeremyleonardo.ezyfood;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MenusAdapter extends RecyclerView.Adapter<MenusAdapter.ViewHolder> {
+public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.ViewHolder> {
 
     Context context;
     ArrayList<Menu> menuList;
 
-    public MenusAdapter(Context context, ArrayList<Menu> menuList) {
+    public CatalogAdapter(Context context, ArrayList<Menu> menuList) {
         this.context = context;
         this.menuList = menuList;
     }

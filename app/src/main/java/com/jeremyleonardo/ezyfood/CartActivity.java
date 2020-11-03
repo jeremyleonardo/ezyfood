@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class CartActivity extends AppCompatActivity {
 
     ArrayList<Order> orderList;
-    OrdersAdapter adapter;
+    CartAdapter adapter;
     RecyclerView rvOrders;
 
     int totalPrice = 0;
@@ -63,7 +63,7 @@ public class CartActivity extends AppCompatActivity {
     private void fitAdapter(){
         rvOrders = findViewById(R.id.rvOrders);
         rvOrders.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new OrdersAdapter(this, (ArrayList<Order>) orderList);
+        adapter = new CartAdapter(this, (ArrayList<Order>) orderList);
         rvOrders.setAdapter(adapter);
     }
 

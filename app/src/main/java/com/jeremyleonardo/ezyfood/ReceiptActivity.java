@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 public class ReceiptActivity extends AppCompatActivity {
 
     ArrayList<Order> orderList;
-    OrdersAdapter adapter;
+    CartAdapter adapter;
     RecyclerView rvOrders;
     TextView tvTotalPrice;
 
@@ -73,7 +72,6 @@ public class ReceiptActivity extends AppCompatActivity {
         String priceText = tvTotalPrice.getText().toString();
         bundle.putParcelableArrayList("orders", orderList);
         bundle.putString("priceText", priceText);
-        Log.v("TEST",bundle.toString());
     }
 
 }
