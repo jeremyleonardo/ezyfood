@@ -16,7 +16,8 @@
             android:id="@+id/tvBalance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wallet Balance : Rp 0" />
+            android:text="Wallet Balance : Rp 0"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,13 +29,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Total Price : Rp 0" />
+                android:text="Total Price : Rp 0"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/payBtn"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:onClick="pay"
                 android:text="Pay Now" />
         </LinearLayout>

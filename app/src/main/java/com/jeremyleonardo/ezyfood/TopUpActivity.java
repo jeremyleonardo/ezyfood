@@ -1,9 +1,13 @@
 package com.jeremyleonardo.ezyfood;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +22,21 @@ public class TopUpActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("EzyFood : TopUp");
 
         setWalletBalance();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.default_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.cartMenu){
+            openCart();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setWalletBalance(){
@@ -43,7 +62,7 @@ public class TopUpActivity extends AppCompatActivity {
 
     }
 
-    public void openCart(View view){
+    public void openCart(){
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }

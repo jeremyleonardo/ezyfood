@@ -10,40 +10,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openCart"
-                android:text="My Order" />
-        </LinearLayout>
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wallet Anda Sekarang :" />
+            android:text="Wallet Anda Sekarang :"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tvWallet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rp 0" />
+            android:text="Rp 0"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/label2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64px"
-            android:text="Nominal TopUp :" />
+            android:layout_marginTop="48dp"
+            android:text="Nominal TopUp :"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/etTopUpAmount"

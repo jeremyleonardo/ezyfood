@@ -1,11 +1,14 @@
 package com.jeremyleonardo.ezyfood;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -60,7 +63,22 @@ public class CatalogActivity extends AppCompatActivity {
 
     }
 
-    public void openCart(View view){
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.default_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.cartMenu){
+            openCart();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void openCart(){
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }

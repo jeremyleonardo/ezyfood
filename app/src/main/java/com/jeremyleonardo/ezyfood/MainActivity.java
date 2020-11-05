@@ -1,9 +1,13 @@
 package com.jeremyleonardo.ezyfood;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +18,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("EzyFood");
         getSupportActionBar().setSubtitle("2201731106 - Jeremy Leonardo");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.default_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.cartMenu){
+            openCart();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void openView(View view) {
@@ -42,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void openCart(View view){
+    public void openCart(){
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
