@@ -5,10 +5,12 @@ import java.io.Serializable;
 public class Menu implements Serializable {
 
     private String name;
+    private String type;
     private int price;
 
-    public Menu(String name, int price) {
+    public Menu(String name, String type, int price) {
         this.name = name;
+        this.type = type;
         this.price = price;
     }
 
@@ -32,8 +34,16 @@ public class Menu implements Serializable {
         this.price = price;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
-        return name + '-' + price;
+        return name + '-' + type + '-' + price;
     }
 }

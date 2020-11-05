@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,13 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.ViewHold
         Menu menu = menuList.get(position);
         holder.tvTitle.setText(menu.getName());
         holder.tvPrice.setText(String.valueOf(menu.getPrice()));
+        if (menu.getType().equals("drink")) {
+            holder.ivMenu.setImageResource(R.drawable.ic_drinks_48_colored);
+        } else if (menu.getType().equals("snack")) {
+            holder.ivMenu.setImageResource(R.drawable.ic_snacks_48_colored);
+        } else if (menu.getType().equals("food")){
+            holder.ivMenu.setImageResource(R.drawable.ic_foods_48_colored);
+        }
     }
 
     @Override
@@ -45,11 +53,13 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.ViewHold
     {
         TextView tvTitle;
         TextView tvPrice;
+        ImageView ivMenu;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvPrice = itemView.findViewById(R.id.tvPrice);
+            ivMenu = itemView.findViewById(R.id.ivMenu);
 
             itemView.setOnClickListener(this);
         }

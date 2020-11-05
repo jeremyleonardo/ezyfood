@@ -61,7 +61,7 @@ public class PreferenceHelper {
             String[] menus = str.split(";");
             for (String menu: menus) {
                 String[] attributes = menu.split("-");
-                orderList.add( new Order(attributes[0], Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2])) );
+                orderList.add( new Order(attributes[0], attributes[1], Integer.parseInt(attributes[2]), Integer.parseInt(attributes[3])) );
             }
         }
 

@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class OrderActivity extends AppCompatActivity {
     TextView tvMenu;
     TextView tvPrice;
     EditText etQuantity;
+    ImageView ivMenu;
     Menu menu;
 
     @Override
@@ -28,6 +30,7 @@ public class OrderActivity extends AppCompatActivity {
         tvMenu = findViewById(R.id.menuName);
         tvPrice = findViewById(R.id.price);
         etQuantity = findViewById(R.id.editTextQuantity);
+        ivMenu = findViewById(R.id.ivMenu);
 
         Intent intent = this.getIntent();
 
@@ -35,6 +38,15 @@ public class OrderActivity extends AppCompatActivity {
             menu = (Menu) getIntent().getSerializableExtra("menu");
             tvMenu.setText(menu.getName());
             tvPrice.setText(String.valueOf(menu.getPrice()));
+
+            if (menu.getType().equals("drink")) {
+                ivMenu.setImageResource(R.drawable.ic_drinks_48_colored);
+            } else if (menu.getType().equals("snack")) {
+                ivMenu.setImageResource(R.drawable.ic_snacks_48_colored);
+            } else if (menu.getType().equals("food")){
+                ivMenu.setImageResource(R.drawable.ic_foods_48_colored);
+            }
+
         } else {
             finish();
         }
