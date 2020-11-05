@@ -30,6 +30,7 @@ public class CatalogActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         catalogType = intent.getStringExtra("catalogType");
+        getSupportActionBar().setTitle("EzyFood : " + catalogType.substring(0, 1).toUpperCase() + catalogType.substring(1));
 
         tvCatalogType.setText(catalogType.substring(0, 1).toUpperCase() + catalogType.substring(1));
 

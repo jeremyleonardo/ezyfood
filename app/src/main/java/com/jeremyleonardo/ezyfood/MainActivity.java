@@ -12,21 +12,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("EzyFood");
+        getSupportActionBar().setSubtitle("2201731106 - Jeremy Leonardo");
     }
 
     public void openView(View view) {
         String viewType = "";
         switch (view.getId()) {
-            case (R.id.button1):
+            case (R.id.llDrinks):
                 viewType = "drinks";
                 break;
-            case (R.id.button2):
+            case (R.id.llSnacks):
                 viewType = "snacks";
                 break;
-            case (R.id.button3):
+            case (R.id.llFoods):
                 viewType = "foods";
                 break;
-            case (R.id.button4):
+            case (R.id.llTopUp):
                 viewType = "topup";
                 break;
         }

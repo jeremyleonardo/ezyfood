@@ -15,6 +15,7 @@ public class TopUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_up);
+        getSupportActionBar().setTitle("EzyFood : TopUp");
 
         setWalletBalance();
     }
