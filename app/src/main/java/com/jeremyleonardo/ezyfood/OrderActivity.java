@@ -66,6 +66,7 @@ public class OrderActivity extends AppCompatActivity {
             }
         } while(qty == 0);
         PreferenceHelper.addToCart(this, menu, qty);
+        Toast.makeText(this, "Berhasil ditambahkan ke cart", Toast.LENGTH_LONG).show();
         finish();
     }
 

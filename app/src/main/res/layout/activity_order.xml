@@ -7,94 +7,111 @@
     tools:context=".OrderActivity"
     style="@style/RootActivityLayoutStyle">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_any_menu_48_colored" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical"
-                    android:paddingRight="40px">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/menuName"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:paddingRight="40px">
+
+                        <TextView
+                            android:id="@+id/menuName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/currency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:text="Rp "
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/currency"
+                            android:id="@+id/quantityLabel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="Rp " />
+                            android:text="Quantity : " />
 
-                        <TextView
-                            android:id="@+id/price"
+                        <EditText
+                            android:id="@+id/editTextQuantity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0" />
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:inputType="number" />
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/quantityLabel"
-                        android:layout_width="wrap_content"
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quantity : " />
-
-                    <EditText
-                        android:id="@+id/editTextQuantity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="number" />
+                        android:onClick="addToCart"
+                        android:text="Add to Cart and Order More" />
                 </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="addToCart"
-                    android:text="Add to Cart and Order More" />
-            </LinearLayout>
-
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
