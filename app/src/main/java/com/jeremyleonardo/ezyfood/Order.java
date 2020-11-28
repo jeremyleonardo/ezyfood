@@ -7,8 +7,8 @@ public class Order extends Menu implements Parcelable {
 
     private int quantity;
 
-    public Order(String name, String type,  int price, int quantity) {
-        super(name, type,  price);
+    public Order(String name, String type, int price, int image, int quantity) {
+        super(name, type, price, image);
         this.quantity = quantity;
     }
 
@@ -22,11 +22,11 @@ public class Order extends Menu implements Parcelable {
 
     @Override
     public String toString() {
-        return getName() + '-' + getType() + '-' + getPrice() + '-' + quantity;
+        return getName() + '-' + getType() + '-' + getPrice() + '-' + getImage() + '-' + quantity;
     }
 
     public Menu toMenu() {
-        return new Menu(getName(), getType(), getPrice());
+        return new Menu(getName(), getType(), getPrice(), getImage());
     }
 
     @Override
@@ -40,6 +40,7 @@ public class Order extends Menu implements Parcelable {
                 getName(),
                 getType(),
                 String.valueOf(getPrice()),
+                String.valueOf(getImage()),
                 String.valueOf(getQuantity())});
     }
 
@@ -50,7 +51,8 @@ public class Order extends Menu implements Parcelable {
         setName(data[0]);
         setType(data[1]);
         setPrice(Integer.parseInt(data[2]));
-        setQuantity(Integer.parseInt(data[3]));
+        setImage(Integer.parseInt(data[3]));
+        setQuantity(Integer.parseInt(data[4]));
     }
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {

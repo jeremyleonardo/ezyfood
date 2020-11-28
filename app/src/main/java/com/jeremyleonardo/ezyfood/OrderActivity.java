@@ -38,14 +38,7 @@ public class OrderActivity extends AppCompatActivity {
             menu = (Menu) getIntent().getSerializableExtra("menu");
             tvMenu.setText(menu.getName());
             tvPrice.setText(String.valueOf(menu.getPrice()));
-
-            if (menu.getType().equals("drink")) {
-                ivMenu.setImageResource(R.drawable.ic_drinks_48_colored);
-            } else if (menu.getType().equals("snack")) {
-                ivMenu.setImageResource(R.drawable.ic_snacks_48_colored);
-            } else if (menu.getType().equals("food")){
-                ivMenu.setImageResource(R.drawable.ic_foods_48_colored);
-            }
+            ivMenu.setImageResource(menu.getImage());
 
         } else {
             finish();

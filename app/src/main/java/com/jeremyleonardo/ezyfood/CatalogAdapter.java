@@ -35,13 +35,7 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.ViewHold
         Menu menu = menuList.get(position);
         holder.tvTitle.setText(menu.getName());
         holder.tvPrice.setText(String.valueOf(menu.getPrice()));
-        if (menu.getType().equals("drink")) {
-            holder.ivMenu.setImageResource(R.drawable.ic_drinks_48_colored);
-        } else if (menu.getType().equals("snack")) {
-            holder.ivMenu.setImageResource(R.drawable.ic_snacks_48_colored);
-        } else if (menu.getType().equals("food")){
-            holder.ivMenu.setImageResource(R.drawable.ic_foods_48_colored);
-        }
+        holder.ivMenu.setImageResource(menu.getImage());
     }
 
     @Override

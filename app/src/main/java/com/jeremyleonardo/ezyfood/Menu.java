@@ -7,11 +7,13 @@ public class Menu implements Serializable {
     private String name;
     private String type;
     private int price;
+    private int image;
 
-    public Menu(String name, String type, int price) {
+    public Menu(String name, String type, int price, int image) {
         this.name = name;
         this.type = type;
         this.price = price;
+        this.image = image;
     }
 
     public Menu(){
@@ -42,8 +44,16 @@ public class Menu implements Serializable {
         this.type = type;
     }
 
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
-        return name + '-' + type + '-' + price;
+        return name + '-' + type + '-' + price + '-' + image;
     }
 }

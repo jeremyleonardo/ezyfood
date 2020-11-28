@@ -38,20 +38,20 @@ public class CatalogActivity extends AppCompatActivity {
         tvCatalogType.setText(catalogType.substring(0, 1).toUpperCase() + catalogType.substring(1));
 
         if (catalogType.equals("drinks")){
-            menuList.add(new Menu("Air Mineral", "drink", 4000));
-            menuList.add(new Menu("Jus Apel", "drink", 8000));
-            menuList.add(new Menu("Jus Mangga", "drink", 9000));
-            menuList.add(new Menu("Jus Alpukat", "drink", 10000));
+            menuList.add(new Menu("Air Mineral", "drink", 4000, R.drawable.img_air_mineral));
+            menuList.add(new Menu("Jus Apel", "drink", 8000, R.drawable.img_jus_apel));
+            menuList.add(new Menu("Jus Mangga", "drink", 9000, R.drawable.img_jus_mangga));
+            menuList.add(new Menu("Jus Alpukat", "drink", 10000, R.drawable.img_jus_alpukat));
         } else if (catalogType.equals("snacks")){
-            menuList.add(new Menu("Kukis", "snack", 4000));
-            menuList.add(new Menu("Kue", "snack", 6000));
-            menuList.add(new Menu("Keripik", "snack", 4000));
-            menuList.add(new Menu("Roti", "snack", 8000));
+            menuList.add(new Menu("Kukis", "snack", 4000, R.drawable.img_kukis));
+            menuList.add(new Menu("Kue", "snack", 6000, R.drawable.img_kue));
+            menuList.add(new Menu("Keripik", "snack", 4000, R.drawable.img_keripik));
+            menuList.add(new Menu("Roti", "snack", 8000, R.drawable.img_roti));
         } else if (catalogType.equals("foods")){
-            menuList.add(new Menu("Bakmi", "food", 20000));
-            menuList.add(new Menu("Bihun", "food", 18000));
-            menuList.add(new Menu("Kwetiau", "food", 19000));
-            menuList.add(new Menu("Nasi Goreng", "food", 22000));
+            menuList.add(new Menu("Bakmi", "food", 20000, R.drawable.img_bakmi));
+            menuList.add(new Menu("Bihun", "food", 18000, R.drawable.img_bihun));
+            menuList.add(new Menu("Kwetiau", "food", 19000, R.drawable.img_kwetiau));
+            menuList.add(new Menu("Nasi Goreng", "food", 22000, R.drawable.img_nasi_goreng));
         }
 
 
